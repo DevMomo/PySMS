@@ -14,7 +14,6 @@ Process:
 
 from message import Message
 
-
 if __name__ == "__main__":
     # test message object
     x = Message()
