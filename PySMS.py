@@ -11,3 +11,11 @@ Process:
 - Configure appropriate carrier SMS gateway 
 - Send SMS message!
 """
+
+from message import Message
+
+
+if __name__ == "__main__":
+    # test message object
+    x = Message()
+    x.display_message()
