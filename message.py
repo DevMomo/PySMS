@@ -9,10 +9,12 @@ Attributes:
     messageText (str): Message text content to be sent
 """
 
+import phonenumbers
 
 class Message():
-    def __init__(self, recipient=0000000000, messagetext="No Message"):
-        self.phoneNo = recipient
+    def __init__(self, recipient=0, messagetext=""):
+        """We cast phone the received number input as string. Both attributes are given default values"""
+        self.phoneNo = phonenumbers.parse(str(recipient), None)
         self.message = messagetext
 
     def display_recipient(self):
