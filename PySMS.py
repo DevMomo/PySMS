@@ -12,9 +12,15 @@ Process:
 - Send SMS message!
 """
 
+import phonenumbers
 from message import Message
+
 
 if __name__ == "__main__":
     # test message object
     x = Message()
     x.display_message()
+
+    #test phonenumber object
+    x = phonenumbers.parse("+442083661177", None)
+    print(x)
