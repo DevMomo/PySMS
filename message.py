@@ -13,12 +13,13 @@ Attributes:
 import phonenumbers
 from phonenumbers import carrier
 
+
 class Message():
-    def __init__(self, recipient=0, messagetext=""):
+    def __init__(self, recipient=0, messageText=""):
         """We cast phone the received number input as string. Both attributes are given default values"""
         self.phoneNo = phonenumbers.parse(str(recipient), "CA")
         self.carrier = carrier.name_for_number(self.phoneNo, "en")
-        self.message = messagetext
+        self.message = messageText
 
     def get_recipient(self):
         """Print recipient's phone number"""
