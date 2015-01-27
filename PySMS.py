@@ -18,5 +18,7 @@ from message import Message
 if __name__ == "__main__":
     # test message object
     x = Message("+17802008960", "hi")
-    x.display_message()
-    x.display_recipient()
+    print(x.get_message())
+    print(x.get_carrier())
+    print(x.get_recipient())
+
