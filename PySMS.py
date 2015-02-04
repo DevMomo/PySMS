@@ -6,8 +6,9 @@ phone number parser. Current implementation only works with
 Canadian phone numbers.
 
 Process:
-- Input phone number and text content
-- Parse phone number and determine carrier
+- Input phone number and message text
+- Parse phone number using phonrnumberlib
+- Find carrier info using carrier
 - Configure appropriate carrier SMS gateway 
 - Send SMS message!
 """
