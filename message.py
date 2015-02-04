@@ -8,27 +8,36 @@ Attributes:
     phoneNo (PhoneNumber): PhoneNumber object containing parsed recipient phone number
     carrier (str) : String containing name of carrier
     message (str): Message text content to be sent
+
+>>> x = Message("+17802001714", "hi")
+>>> x.get_message()
+'hi'
+>>> str(x.get_recipient())
+'Country Code: 1 National Number: 7802001714'
 """
 
 import phonenumbers
-from phonenumbers import carrier
 
 
 class Message():
-    def __init__(self, recipient=0, messageText=""):
+    def __init__(self, recipient=0, message_text=""):
         """We cast phone the received number input as string. Both attributes are given default values"""
         self.phoneNo = phonenumbers.parse(str(recipient), "CA")
-        self.message = messageText
-        self.carrier = ""
+        self.message = message_text
+        self.gateway = ""
 
     def get_recipient(self):
-        """Print recipient's phone number"""
+        """Returns recipient's phone number"""
         return self.phoneNo
 
-    def get_carrier(self):
-        """Print phone number carrier"""
+    def get_gateway(self):
+        """Returns valid SMS gateway"""
         return self.carrier
 
     def get_message(self):
-        """Print text message"""
+        """Returns text message"""
         return self.message
+
+if __name__ == "__main__":
+    import doctest
+    doctest.testmod()

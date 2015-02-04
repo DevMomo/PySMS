@@ -1,25 +1,21 @@
 """
-This program utilizes email to SMS gateways to send
-text messages. SMS gateway configuration is determined
-by determining carrier ID using LibPhoneNumber, Google's
-phone number parser. Current implementation only works with 
-Canadian phone numbers.
+PySMS is a program that utilizes SMS gateways to send text
+messages through email to any Canadian phone number.
+
+Phone numbers are parsed using Google's phonenumberslib
+library. Carriers are identified by CarrierAnalyzer, a
+module I wrote that cross-reference checks phone numbers
+with a carrier prefix database using regex.
 
 Process:
 - Input phone number and message text
 - Parse phone number using phonrnumberlib
 - Find carrier info using carrier
-- Configure appropriate carrier SMS gateway 
+- Find valid SMS gateway
 - Send SMS message!
 """
 
 from message import Message
 
-
 if __name__ == "__main__":
-    # test message object
-    x = Message("+17809524259", "hi")
-    print(x.get_message())
-    print(x.get_carrier())
-    print(x.get_recipient())
-
+    pass
