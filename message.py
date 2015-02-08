@@ -1,8 +1,9 @@
 """This module is a message class.
 
-A message object contains attributes for
-message recipients, as well as message text
-content.
+This class represents an SMS text message
+object. A Message object is used my the main
+PySMS module when acquiring a message and recipient
+phone number from the user to send.
 
 Attributes:
     phoneNo (PhoneNumber): PhoneNumber object containing parsed recipient phone number
