@@ -11,7 +11,7 @@ Attributes:
     message (str): Message text content to be sent
 
 >>> x = Message("+17802001714", "hi")
->>> x.get_message()
+>>> x.message
 'hi'
 >>> str(x.get_recipient())
 'Country Code: 1 National Number: 7802001714'
@@ -25,15 +25,11 @@ class Message():
         """We cast phone the received number input as string. Both attributes are given default values"""
         self.phoneNo = phonenumbers.parse(str(recipient), "CA")
         self.message = message_text
-        self.gateway = ""
+        self.recipient = ""
 
     def get_recipient(self):
         """Returns recipient's phone number"""
         return self.phoneNo
-
-    def get_gateway(self):
-        """Returns valid SMS gateway"""
-        return self.carrier
 
     def get_message(self):
         """Returns text message"""
